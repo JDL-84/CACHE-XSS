@@ -69,6 +69,7 @@ var aExData = popup.document.createElement("a");
 aExData.style = "color:fff;";
 aExData.innerHTML = "Was this data exfiltrated to external source?";
 aExData.href = Toilet;
+aExData.target="_blank";
 popup.document.body.appendChild(aExData);
 
 }
