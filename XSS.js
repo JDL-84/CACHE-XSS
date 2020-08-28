@@ -12,8 +12,8 @@ var timeoutlength = 9999000;
 
 //Get Cookie
 var UsersCookie = document.cookie;
-var DocHTML = document.body.innerHTML;
-var DocLocation = document.location;
+var DocHTML = document.getElementsByTagName('html')[0].innerHTML;
+var DocLocation = document.location.href;
 
 
 var TextAreaStyle = "width:100%;height:150px;margin-left:0px;margin-right:0px;background:rgb(79, 79, 79);";
