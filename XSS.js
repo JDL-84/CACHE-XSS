@@ -1,4 +1,4 @@
-<script src="https://jdl-84.github.io/CACHE-XSS/XSS.js"></script> 
+ 
 //BEGIN - Update Title for confirmation script loaded
 document.title = "XSS-Active"
 //Put Back the variable used to invoke the XSS
