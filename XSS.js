@@ -12,7 +12,7 @@ var timeoutlength = 9999000;
 
 //Get Cookie
 var UsersCookie = document.cookie;
-var DocHTML = document.innerhtml;
+var DocHTML = document.body.innerHTML;
 var DocLocation = document.location;
 
 
