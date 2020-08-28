@@ -1,3 +1,2 @@
 alert("start");
-var websession;
-set websession = '1';
+var websession  = '1';
