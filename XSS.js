@@ -7,3 +7,4 @@ var mysessionno  = '1';
 var CurrDT          = new Date();
 var TimeAsMS        = CurrDT.getTime();
 var LastRefresh = TimeAsMS;
+var timeoutlength = 9999000;
