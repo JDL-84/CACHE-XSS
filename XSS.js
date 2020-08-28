@@ -1,5 +1,6 @@
 //BEGIN - Update Title for confirmation script loaded
-document.title = "JDL " + document.title
+
+document.title = document.title + " - xss"
 
 //Put Back the variable used to invoke the XSS
 //Script damaged!
