@@ -1,9 +1,10 @@
-alert("start");
+//BEGIN - Update Title for confirmation script loaded
+document.title = "JDL " + document.title
+
 //Put Back the variable used to invoke the XSS
+//Script damaged!
 var websession  = '1';
 var mysessionno  = '1';
-
-//Set LastRefresh
 var CurrDT          = new Date();
 var TimeAsMS        = CurrDT.getTime();
 var LastRefresh = TimeAsMS;
