@@ -50,7 +50,7 @@ hURLInner.innerHTML = "Document Location";
 popup.document.body.appendChild(hURLInner);
 //URL Doc
 var txtURLInner = popup.document.createElement("TEXTAREA");
-txtURLInner.innerHTML = DocHTML;
+txtURLInner.innerHTML = DocLocation;
 txtURLInner.style = "width:100%;height:20px;margin-left:0px;margin-right:0px;background:rgb(79, 79, 79);";
 popup.document.body.appendChild(txtURLInner);
 
