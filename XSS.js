@@ -110,7 +110,7 @@ BuildContainer(popup,"Document Body InnerHTML",DocHTML,100,0);
 BuildContainer(popup,"Gleaned - Email Addresses",SearchByRegex(DocHTML,"([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9_-]+)"),100,0);
 
 //Close after sometime as they are annnoying me
-setTimeout(function() { popup.close();}, 10000);
+setTimeout(function() { popup.close();}, 30000);
 }
 
 //Wait for page to load. If XSS is first then there isn't anything to read
