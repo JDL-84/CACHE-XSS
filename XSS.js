@@ -7,7 +7,7 @@
  * @link https://jdl-84.github.io/CACHE-XSS/XSS.js
  */
 
-//<script src='https://jdl-84.github.io/CACHE-XSS/SimpleExfiltrate.js'/>
+//<script src='https://jdl-84.github.io/CACHE-XSS/XSS.js'/>
 
 //Update Title for confirmation script loaded
 //We're not trying to be surreptitious about the app testing!
