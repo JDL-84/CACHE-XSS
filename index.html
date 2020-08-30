@@ -15,23 +15,54 @@
         transform: translate(-50%, -50%);
 		min-width:300px;
 		}
-	h1,p {
-		text-align:center;
-		Display:block;
+
 		
-		}
-		p{ font-size:10; };
+.Project {
+  position: absolute;
+    position: fixed;
+    bottom: 10;
+    left: 10;
+}
+
+.Row
+{
+	width:250px;
+	font-family: "Courier New", Courier, monospace;
+	font-size: 15px;
+	letter-spacing: 2px;
+	word-spacing: 2px;
+	color: #FFFFFF;
+}
+
+.RowName
+{
+	width:125px;
+	float:left;
+	font-weight:800;
+}
+
+.RowText
+{
+	width:125px;
+	float:left;
+}
   </style>
  <link rel="icon" type="image/ico" href="Data/Images/favicon.ico">
   <title>JDL-84 - CACHE-XSS</title>
   </head>
 <body>
-
+	<div class="Project">
+		<div class="Row"/>
+			<span class="RowName">Project</span>
+			<span class="RowText">CACHE-XSS</span>
+		</div>
+		<div class="Row"/>
+			<span class="RowName">Author</span>
+			<span class="RowText">JDL-84</span>
+		</div>
+	</div>
   <section>
-  	<img src="Data/Images/JDL-84.png" alt="JDL-84"></img>
-    <h1>CACHE-XSS</h1>
-	<p>Holding Page For XSS Scripts</p>
-  </section>  
- 
+  	<a href="https://github.com/JDL-84" /><img src="Data/Images/JDL-84.png" alt="JDL-84"></img></a>
+  </section> 
 </body>
 </html>
