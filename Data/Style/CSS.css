@@ -1,0 +1,46 @@
+
+    body {
+        background: #930707;}
+    section {
+        background: #930707;
+        color: white;
+        border-radius: 1em;
+        padding: 1em;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-right: -50%;
+        transform: translate(-50%, -50%);
+		min-width:300px;
+		}
+
+		
+.Project {
+  position: absolute;
+    position: fixed;
+    bottom: 10;
+    left: 10;
+}
+
+.Row
+{
+	font-family: "Courier New", Courier, monospace;
+	font-size: 15px;
+	letter-spacing: 2px;
+	word-spacing: 2px;
+	color: #FFFFFF;
+}
+
+.RowName
+{
+	min-width:125px;
+	float:left;
+	font-weight:800;
+}
+
+.RowText
+{
+	padding-left:15px;
+	width:425px;
+	float:left;
+}

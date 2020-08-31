@@ -1,0 +1,100 @@
+<html>
+	<head>
+		<script src="../XSS.js"></script> 
+		<link rel="stylesheet" type="text/css" href="../Data/Style/CSS.css">
+			<link rel="icon" type="image/ico" href="../Data/Images/favicon.ico">
+				<title>JDL-84 - XSS.JS - Test Page</title>
+				<style>
+table.DemoGraphics{border:2px solid #930707;background-color:#bababa;width:800px;text-align:center;border-collapse:collapse}table.DemoGraphics td, table.DemoGraphics th{border:1px solid #aaa;padding:3px 2px}table.DemoGraphics tbody td{font-size:13px}table.DemoGraphics tr:nth-child(even){background:#fff}table.DemoGraphics thead{background:#930707}table.DemoGraphics thead th{font-size:19px;font-weight:700;color:#fff;text-align:center;border-left:2px solid #930707}table.DemoGraphics thead th:first-child{border-left:none}table.DemoGraphics tfoot{font-size:13px;font-weight:700;color:#fff;background:#a40808}table.DemoGraphics tfoot td{font-size:13px}table.DemoGraphics tfoot .links{text-align:right}table.DemoGraphics tfoot .links a{display:inline-block;background:#fff;color:#a40808;padding:2px 8px;border-radius:5px}.navigationlink{-moz-box-shadow:inset 0px 1px 0px 0px #f5978e;-webkit-box-shadow:inset 0px 1px 0px 0px #f5978e;box-shadow:inset 0px 1px 0px 0px #f5978e;background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #a40808), color-stop(1, #c62d1f) );background:-moz-linear-gradient( center top, #a40808 5%, #c62d1f 100% );filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#a40808', endColorstr='#c62d1f');background-color:#a40808;-webkit-border-top-left-radius:0px;-moz-border-radius-topleft:0px;border-top-left-radius:0px;-webkit-border-top-right-radius:0px;-moz-border-radius-topright:0px;border-top-right-radius:0px;-webkit-border-bottom-right-radius:0px;-moz-border-radius-bottomright:0px;border-bottom-right-radius:0px;-webkit-border-bottom-left-radius:0px;-moz-border-radius-bottomleft:0px;border-bottom-left-radius:0px;text-indent:0;border:1px solid #d02718;display:inline-block;color:#fff;font-family:Arial;font-size:15px;font-weight:bold;font-style:normal;height:65px;line-height:65px;width:100%;text-decoration:none;text-align:center;text-shadow:1px 1px 0px #810e05}.navigationlink:hover{background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #c62d1f), color-stop(1, #a40808) );background:-moz-linear-gradient( center top, #c62d1f 5%, #a40808 100% );filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#c62d1f',endColorstr='#a40808');background-color:#c62d1f}.navigationlink:active{position:relative;top:1px}.JDL{position:absolute;position:fixed;top:10;left:10}.ICO{width:100px;height:100px;float:left}.ICO img{width:100px;height:100px}.Title{float:left;padding:15 15 15 15;color:#fff}.Title h1{font-size:25px}.Navigations{height:50px}
+
+				</style>
+			</head>
+			<body>
+				<div class="Project">
+					<div class="Row"/>
+					<span class="RowName">Project</span>
+					<span class="RowText">XSS.JS</span>
+				</div>
+				<div class="Row"/>
+				<span class="RowName">Description</span>
+				<span class="RowText">Sample Page to glean data from.</span>
+			</div>
+		</div>
+		<div class="JDL">
+			<div class="ICO">
+				<a href="https://github.com/JDL-84">
+					<img class="ICO" src="../Data/Images/JDL-84.png" alt="JDL-84" />
+				</a>
+			</div>
+			<div class="Title">
+				<h1>XSS.JS - Test Page</h1>
+			</div>
+		</div>
+		<section>
+		</div>
+		<div class="DataToGlean">
+			<table class="DemoGraphics">
+				<thead>
+					<tr>
+						<th>Date Type</th>
+
+						<th>Data</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Date Of Birth</td>			
+						<td>
+							<p>
+								25/07/1980 </br>
+							24/10/2014 </br>
+						15/09/2016 </br>
+				</p>
+			</td>
+		</tr>
+<tr>
+			<td>Email Addresses</td>
+			<td>
+				<p>
+					JDL@FakeSite.Gov.uk </br>
+				John.Smith@Farcebook.com</br>
+			Jane.Doe@Farcebook.com
+		</p>
+	</td>
+</tr>
+<tr>
+			<td>NHS Numbers</td>
+			<td>
+				<p>
+
+534 533 9325</br>
+016 538 2376</br>
+4495253700</br>
+840 001 5940</br>
+2408911370</br>
+
+		</p>
+	</td>
+</tr>
+<tr>
+	<td>Input Boxes</td>
+	<td>
+		<p>
+			<input type="text" value="Jane" id="FristInput" name="FirstInputName" />
+		</br>
+		<input type="text" value="Doe" id="SecondInput"  />
+	</br>
+	<input type="text" value="1 West Wallaby Road, London" id="ThirdInput" name="ThirdInputName" />
+</p>
+</td>
+</tr>
+</tbody>
+</tr>
+</table>
+<div class="Navigations">
+<a href="#" class="navigationlink" onclick="location.reload();">RELOAD</a>
+</div>
+</div>
+</section>
+</body>
+</html>
