@@ -1,101 +1,180 @@
 
     body {
-        background: #930707;}
-    section {
-        background: #930707;
-        color: white;
-        border-radius: 1em;
-        padding: 1em;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        margin-right: -50%;
-        transform: translate(-50%, -50%);
-		min-width:300px;
-		text-align:center;
-		}
 
-		
-.Project {
-  position: absolute;
-    position: fixed;
-    bottom: 10;
-    left: 10;
-}
+    	background: #930707;
 
-.Row
-{
-	font-family: "Courier New", Courier, monospace;
-	font-size: 15px;
-	letter-spacing: 2px;
-	word-spacing: 2px;
-	color: #FFFFFF;
-}
-
-.RowName
-{
-	min-width:125px;
-	float:left;
-	font-weight:800;
-}
-
-.RowText
-{
-	padding-left:15px;
-	width:425px;
-	float:left;
-}
-
-
-.select {
-    position: relative;
-    display: inline-block;
-    margin-bottom: 15px;
-    width: 100%;
-}    
-
-.select select {
-		margin-top:50px;
-        font-family: 'Arial';
-        display: inline-block;
-        width: 100%;
-        cursor: pointer;
-        padding: 9px 16px;
-        outline: 0;
-        border: 0px solid #000000;
-        border-radius: 0px;
-        background: #e6e6e6;
-        color: #c71313;
-        appearance: none;
-        -webkit-appearance: none;
-        -moz-appearance: none;
     }
-        .select select::-ms-expand {
-            display: none;
-        }
-        .select select:hover,
-        .select select:focus {
-            color: #0f0f0f;
-            background: #bbbbbb;
-        }
-        .select select:disabled {
-            opacity: 0.5;
-            pointer-events: none;
-        }
-.select_arrow {
-	margin-top:50px;
-    position: absolute;
-    top: 16px;
-    right: 15px;
-    pointer-events: none;
-    border-style: solid;
-    border-width: 8px 5px 0px 5px;
-    border-color: #7b7b7b transparent transparent transparent;
-}
-.select select:hover ~ .select_arrow,
-.select select:focus ~ .select_arrow {
-    border-top-color: #000000;
-}
-.select select:disabled ~ .select_arrow {
-    border-top-color: #cccccc;
-}
+
+    section {
+
+    	background: #930707;
+
+    	color: white;
+
+    	border-radius: 1em;
+
+    	padding: 1em;
+
+    	position: absolute;
+
+    	top: 50%;
+
+    	left: 50%;
+
+    	margin-right: -50%;
+
+    	transform: translate(-50%, -50%);
+
+    	min-width: 300px;
+
+    	text-align: center;
+
+    }
+
+    .Project {
+
+    	position: absolute;
+
+    	position: fixed;
+
+    	bottom: 10;
+
+    	left: 10;
+
+    }
+
+    .Row {
+
+    	font-family: "Courier New", Courier, monospace;
+
+    	font-size: 15px;
+
+    	letter-spacing: 2px;
+
+    	word-spacing: 2px;
+
+    	color: #FFFFFF;
+
+    }
+
+    .RowName {
+
+    	min-width: 125px;
+
+    	float: left;
+
+    	font-weight: 800;
+
+    }
+
+    .RowText {
+
+    	padding-left: 15px;
+
+    	width: 425px;
+
+    	float: left;
+
+    }
+
+    .select {
+
+    	position: relative;
+
+    	display: inline-block;
+
+    	margin-bottom: 15px;
+
+    	width: 100%;
+
+    }
+
+    .select select {
+
+    	margin-top: 50px;
+
+    	font-family: 'Arial';
+
+    	display: inline-block;
+
+    	width: 100%;
+
+    	cursor: pointer;
+
+    	padding: 9px 16px;
+
+    	outline: 0;
+
+    	border: 0px solid #000000;
+
+    	border-radius: 0px;
+
+    	background: #e6e6e6;
+
+    	color: #c71313;
+
+    	appearance: none;
+
+    	-webkit-appearance: none;
+
+    	-moz-appearance: none;
+
+    }
+
+    .select select::-ms-expand {
+
+    	display: none;
+
+    }
+
+    .select select:hover,
+
+    .select select:focus {
+
+    	color: #0f0f0f;
+
+    	background: #bbbbbb;
+
+    }
+
+    .select select:disabled {
+
+    	opacity: 0.5;
+
+    	pointer-events: none;
+
+    }
+
+    .select_arrow {
+
+    	margin-top: 50px;
+
+    	position: absolute;
+
+    	top: 16px;
+
+    	right: 15px;
+
+    	pointer-events: none;
+
+    	border-style: solid;
+
+    	border-width: 8px 5px 0px 5px;
+
+    	border-color: #7b7b7b transparent transparent transparent;
+
+    }
+
+    .select select:hover ~ .select_arrow,
+
+    .select select:focus ~ .select_arrow {
+
+    	border-top-color: #000000;
+
+    }
+
+    .select select:disabled ~ .select_arrow {
+
+    	border-top-color: #cccccc;
+
+    }

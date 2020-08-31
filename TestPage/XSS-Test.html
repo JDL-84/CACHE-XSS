@@ -1,100 +1,86 @@
 <html>
-	<head>
-		<script src="../XSS.js"></script> 
-		<link rel="stylesheet" type="text/css" href="../Data/Style/CSS.css">
-		<link rel="stylesheet" type="text/css" href="TestPages.css">
-		
-			<link rel="icon" type="image/ico" href="../Data/Images/favicon.ico">
-				<title>JDL-84 - XSS.JS - Test Page</title>
-			</head>
-			<body>
-				<div class="Project">
-					<div class="Row"/>
-					<span class="RowName">Project</span>
-					<span class="RowText">XSS.JS</span>
-				</div>
-				<div class="Row"/>
-				<span class="RowName">Description</span>
-				<span class="RowText">Sample Page to glean data from.</span>
-			</div>
+
+<head>
+	<script src="../XSS.js"></script>
+	<link rel="stylesheet" type="text/css" href="../Data/Style/CSS.css">
+	<link rel="stylesheet" type="text/css" href="TestPages.css">
+	<link rel="icon" type="image/ico" href="../Data/Images/favicon.ico">
+	<title>JDL-84 - XSS.JS - Test Page</title>
+</head>
+
+<body>
+	<div class="Project">
+		<div class="Row" />	<span class="RowName">Project</span>
+		<span class="RowText">XSS.JS</span>
+	</div>
+	<div class="Row" />	<span class="RowName">Description</span>
+	<span class="RowText">Sample Page to glean data from.</span>
+	</div>
+	</div>
+	<div class="JDL">
+		<div class="ICO">
+			<a href="https://github.com/JDL-84">
+				<img class="ICO" src="../Data/Images/JDL-84.png" alt="JDL-84" />
+			</a>
 		</div>
-		<div class="JDL">
-			<div class="ICO">
-				<a href="https://github.com/JDL-84">
-					<img class="ICO" src="../Data/Images/JDL-84.png" alt="JDL-84" />
-				</a>
-			</div>
-			<div class="Title">
-				<h1>XSS.JS - Test Page</h1>
-			</div>
+		<div class="Title">
+			<h1>XSS.JS - Test Page</h1>
 		</div>
-		<section>
+	</div>
+	<section>
 		</div>
 		<div class="DataToGlean">
-		<div>			<pre>&#x3C;script src=&#x27;https://jdl-84.github.io/CACHE-XSS/XSS.js&#x27;/&#x3E;</pre>		</div>
+			<div>	<pre>&#x3C;script src=&#x27;https://jdl-84.github.io/CACHE-XSS/XSS.js&#x27;/&#x3E;</pre>	
+			</div>
 			<table class="DemoGraphics">
 				<thead>
 					<tr>
 						<th>Date Type</th>
-
 						<th>Data</th>
 					</tr>
 				</thead>
 				<tbody>
 					<tr>
-						<td>Date Of Birth</td>			
+						<td>Date Of Birth</td>
+						<td>
+							<p>25/07/1980</br>24/10/2014</br>15/09/2016</br>
+							</p>
+						</td>
+					</tr>
+					<tr>
+						<td>Email Addresses</td>
+						<td>
+							<p>JDL@FakeSite.Gov.uk</br>John.Smith@Farcebook.com</br>Jane.Doe@Farcebook.com</p>
+						</td>
+					</tr>
+					<tr>
+						<td>NHS Numbers</td>
+						<td>
+							<p>534 533 9325</br>016 538 2376</br>4495253700</br>840 001 5940</br>2408911370</br>
+							</p>
+						</td>
+					</tr>
+					<tr>
+						<td>Input Boxes</td>
 						<td>
 							<p>
-								25/07/1980 </br>
-							24/10/2014 </br>
-						15/09/2016 </br>
-				</p>
-			</td>
-		</tr>
-<tr>
-			<td>Email Addresses</td>
-			<td>
-				<p>
-					JDL@FakeSite.Gov.uk </br>
-				John.Smith@Farcebook.com</br>
-			Jane.Doe@Farcebook.com
-		</p>
-	</td>
-</tr>
-<tr>
-			<td>NHS Numbers</td>
-			<td>
-				<p>
-
-534 533 9325</br>
-016 538 2376</br>
-4495253700</br>
-840 001 5940</br>
-2408911370</br>
-
-		</p>
-	</td>
-</tr>
-<tr>
-	<td>Input Boxes</td>
-	<td>
-		<p>
-			<input type="text" value="Jane" id="FristInput" name="FirstInputName" />
-		</br>
-		<input type="text" value="Doe" id="SecondInput"  />
-	</br>
-	<input type="text" value="1 West Wallaby Road, London" id="ThirdInput" name="ThirdInputName" />
-</p>
-</td>
-</tr>
-</tbody>
-</tr>
-</table>
-<div class="Navigations">
-<a href="#" class="navigationlink" onclick="location.reload();">RELOAD</a>
-<a href="../index.html" class="navigationlink" >MENU</a>
-</div>
-</div>
-</section>
+								<input type="text" value="Jane" id="FristInput" name="FirstInputName" />
+								</br>
+								<input type="text" value="Doe" id="SecondInput" />
+								</br>
+								<input type="text" value="1 West Wallaby Road, London" id="ThirdInput" name="ThirdInputName" />
+							</p>
+						</td>
+					</tr>
+				</tbody>
+				</tr>
+			</table>
+			<div class="Navigations">
+				<a href="#" class="navigationlink" onclick="location.reload();">RELOAD</a>
+				<a href="../index.html" class="navigationlink">MENU</a>
+			</div>
+		</div>
+	</section>
 </body>
+
 </html>

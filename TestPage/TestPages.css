@@ -1,149 +1,147 @@
 table.DemoGraphics {
-    border: 2px solid #930707;
-    background-color: #bababa;
-    width: 800px;
-    text-align: center;
-    border-collapse: collapse;
-	margin-bottom:25px;
-		font-family: "Courier New", Courier, monospace;
+	border: 2px solid #930707;
+	background-color: #bababa;
+	width: 800px;
+	text-align: center;
+	border-collapse: collapse;
+	margin-bottom: 25px;
+	font-family: "Courier New", Courier, monospace;
 	font-size: 15px;
 }
-
 table.DemoGraphics input {
-	
-	width:100%;
-	border:solid 1px #930707;
-		
+	width: 100%;
+	border: solid 1px #930707;
 }
-
 table.DemoGraphics td,
 table.DemoGraphics th {
-    border: 1px solid #aaa;
-    padding: 3px 2px;
+	border: 1px solid #aaa;
+	padding: 3px 2px;
 }
 table.DemoGraphics tbody td {
-    font-size: 13px;
+	font-size: 13px;
 }
 table.DemoGraphics tr:nth-child(even) {
-    background: #fff;
+	background: #fff;
 }
 table.DemoGraphics thead {
-    background: #930707;
+	background: #930707;
 }
 table.DemoGraphics thead th {
-    font-size: 19px;
-    font-weight: 700;
-    color: #fff;
-    text-align: center;
-    border-left: 2px solid #930707;
+	font-size: 19px;
+	font-weight: 700;
+	color: #fff;
+	text-align: center;
+	border-left: 2px solid #930707;
 }
 table.DemoGraphics thead th:first-child {
-    border-left: none;
+	border-left: none;
 }
 table.DemoGraphics tfoot {
-    font-size: 13px;
-    font-weight: 700;
-    color: #fff;
-    background: #a40808;
+	font-size: 13px;
+	font-weight: 700;
+	color: #fff;
+	background: #a40808;
 }
 table.DemoGraphics tfoot td {
-    font-size: 13px;
+	font-size: 13px;
 }
 table.DemoGraphics tfoot .links {
-    text-align: right;
+	text-align: right;
 }
 table.DemoGraphics tfoot .links a {
-    display: inline-block;
-    background: #fff;
-    color: #a40808;
-    padding: 2px 8px;
-    border-radius: 5px;
+	display: inline-block;
+	background: #fff;
+	color: #a40808;
+	padding: 2px 8px;
+	border-radius: 5px;
 }
 .navigationlink {
-    -moz-box-shadow: inset 0px 1px 0px 0px #f5978e;
-    -webkit-box-shadow: inset 0px 1px 0px 0px #f5978e;
-    box-shadow: inset 0px 1px 0px 0px #f5978e;
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #a40808), color-stop(1, #c62d1f));
-    background: -moz-linear-gradient(center top, #a40808 5%, #c62d1f 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#a40808', endColorstr='#c62d1f');
-    background-color: #a40808;
-    -webkit-border-top-left-radius: 0px;
-    -moz-border-radius-topleft: 0px;
-    border-top-left-radius: 0px;
-    -webkit-border-top-right-radius: 0px;
-    -moz-border-radius-topright: 0px;
-    border-top-right-radius: 0px;
-    -webkit-border-bottom-right-radius: 0px;
-    -moz-border-radius-bottomright: 0px;
-    border-bottom-right-radius: 0px;
-    -webkit-border-bottom-left-radius: 0px;
-    -moz-border-radius-bottomleft: 0px;
-    border-bottom-left-radius: 0px;
-    text-indent: 0;
-    border: 1px solid #d02718;
-    display: inline-block;
-    color: #fff;
-    font-family: Arial;
-    font-size: 15px;
-    font-weight: bold;
-    font-style: normal;
-    height: 35px;
-    line-height: 35px;
-    width: 250px;
-    text-decoration: none;
-    text-align: center;
-    text-shadow: 1px 1px 0px #810e05;
+	-moz-box-shadow: inset 0px 1px 0px 0px #f5978e;
+	-webkit-box-shadow: inset 0px 1px 0px 0px #f5978e;
+	box-shadow: inset 0px 1px 0px 0px #f5978e;
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #a40808), color-stop(1, #c62d1f));
+	background: -moz-linear-gradient(center top, #a40808 5%, #c62d1f 100%);
+	filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#a40808', endColorstr='#c62d1f');
+	background-color: #a40808;
+	-webkit-border-top-left-radius: 0px;
+	-moz-border-radius-topleft: 0px;
+	border-top-left-radius: 0px;
+	-webkit-border-top-right-radius: 0px;
+	-moz-border-radius-topright: 0px;
+	border-top-right-radius: 0px;
+	-webkit-border-bottom-right-radius: 0px;
+	-moz-border-radius-bottomright: 0px;
+	border-bottom-right-radius: 0px;
+	-webkit-border-bottom-left-radius: 0px;
+	-moz-border-radius-bottomleft: 0px;
+	border-bottom-left-radius: 0px;
+	text-indent: 0;
+	border: 1px solid #d02718;
+	display: inline-block;
+	color: #fff;
+	font-family: Arial;
+	font-size: 15px;
+	font-weight: bold;
+	font-style: normal;
+	height: 35px;
+	line-height: 35px;
+	width: 250px;
+	text-decoration: none;
+	text-align: center;
+	text-shadow: 1px 1px 0px #810e05;
 }
 .navigationlink:hover {
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #c62d1f), color-stop(1, #a40808));
-    background: -moz-linear-gradient(center top, #c62d1f 5%, #a40808 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#c62d1f',endColorstr='#a40808');
-    background-color: #c62d1f;
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #c62d1f), color-stop(1, #a40808));
+	background: -moz-linear-gradient(center top, #c62d1f 5%, #a40808 100%);
+	filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#c62d1f', endColorstr='#a40808');
+	background-color: #c62d1f;
 }
 .navigationlink:active {
-    position: relative;
-    top: 1px;
+	position: relative;
+	top: 1px;
 }
 .JDL {
-    position: absolute;
-    position: fixed;
-    top: 10;
-    left: 10;
+	position: absolute;
+	position: fixed;
+	top: 10;
+	left: 10;
 }
 .ICO {
-    width: 100px;
-    height: 100px;
-    float: left;
+	width: 100px;
+	height: 100px;
+	float: left;
 }
 .ICO img {
-    width: 100px;
-    height: 100px;
+	width: 100px;
+	height: 100px;
 }
 .Title {
-    float: left;
-    padding: 15 15 15 15;
-    color: #fff;
+	float: left;
+	padding: 25 25 25 25;
+	color: #fff;
 }
 .Title h1 {
-    font-size: 25px;
+	font-size: 25px;
+	font-family: "Courier New", Courier, monospace;
+	font-size: 25px;
 }
 .Navigations {
-    height: 50px;
-    text-align: center;
+	height: 50px;
+	text-align: center;
 }
 pre {
-    background: #f4f4f4;
-    border: 1px solid #ddd;
-    border-left: 3px solid #f36d33;
-    color: #666;
-    page-break-inside: avoid;
-    font-family: monospace;
-    font-size: 15px;
-    line-height: 1.6;
-    margin-bottom: 1.6em;
-    max-width: 100%;
-    overflow: auto;
-    padding: 1em 1.5em;
-    display: block;
-    word-wrap: break-word;
+	background: #f4f4f4;
+	border: 1px solid #ddd;
+	border-left: 3px solid #f36d33;
+	color: #666;
+	page-break-inside: avoid;
+	font-family: monospace;
+	font-size: 15px;
+	line-height: 1.6;
+	margin-bottom: 1.6em;
+	max-width: 100%;
+	overflow: auto;
+	padding: 1em 1.5em;
+	display: block;
+	word-wrap: break-word;
 }
