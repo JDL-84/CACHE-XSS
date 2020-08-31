@@ -2,12 +2,10 @@
 	<head>
 		<script src="../XSS.js"></script> 
 		<link rel="stylesheet" type="text/css" href="../Data/Style/CSS.css">
+		<link rel="stylesheet" type="text/css" href="TestPages.css">
+		
 			<link rel="icon" type="image/ico" href="../Data/Images/favicon.ico">
 				<title>JDL-84 - XSS.JS - Test Page</title>
-				<style>
-table.DemoGraphics{border:2px solid #930707;background-color:#bababa;width:800px;text-align:center;border-collapse:collapse}table.DemoGraphics td, table.DemoGraphics th{border:1px solid #aaa;padding:3px 2px}table.DemoGraphics tbody td{font-size:13px}table.DemoGraphics tr:nth-child(even){background:#fff}table.DemoGraphics thead{background:#930707}table.DemoGraphics thead th{font-size:19px;font-weight:700;color:#fff;text-align:center;border-left:2px solid #930707}table.DemoGraphics thead th:first-child{border-left:none}table.DemoGraphics tfoot{font-size:13px;font-weight:700;color:#fff;background:#a40808}table.DemoGraphics tfoot td{font-size:13px}table.DemoGraphics tfoot .links{text-align:right}table.DemoGraphics tfoot .links a{display:inline-block;background:#fff;color:#a40808;padding:2px 8px;border-radius:5px}.navigationlink{-moz-box-shadow:inset 0px 1px 0px 0px #f5978e;-webkit-box-shadow:inset 0px 1px 0px 0px #f5978e;box-shadow:inset 0px 1px 0px 0px #f5978e;background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #a40808), color-stop(1, #c62d1f) );background:-moz-linear-gradient( center top, #a40808 5%, #c62d1f 100% );filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#a40808', endColorstr='#c62d1f');background-color:#a40808;-webkit-border-top-left-radius:0px;-moz-border-radius-topleft:0px;border-top-left-radius:0px;-webkit-border-top-right-radius:0px;-moz-border-radius-topright:0px;border-top-right-radius:0px;-webkit-border-bottom-right-radius:0px;-moz-border-radius-bottomright:0px;border-bottom-right-radius:0px;-webkit-border-bottom-left-radius:0px;-moz-border-radius-bottomleft:0px;border-bottom-left-radius:0px;text-indent:0;border:1px solid #d02718;display:inline-block;color:#fff;font-family:Arial;font-size:15px;font-weight:bold;font-style:normal;height:65px;line-height:65px;width:100%;text-decoration:none;text-align:center;text-shadow:1px 1px 0px #810e05}.navigationlink:hover{background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #c62d1f), color-stop(1, #a40808) );background:-moz-linear-gradient( center top, #c62d1f 5%, #a40808 100% );filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#c62d1f',endColorstr='#a40808');background-color:#c62d1f}.navigationlink:active{position:relative;top:1px}.JDL{position:absolute;position:fixed;top:10;left:10}.ICO{width:100px;height:100px;float:left}.ICO img{width:100px;height:100px}.Title{float:left;padding:15 15 15 15;color:#fff}.Title h1{font-size:25px}.Navigations{height:50px}
-
-				</style>
 			</head>
 			<body>
 				<div class="Project">
@@ -33,6 +31,7 @@ table.DemoGraphics{border:2px solid #930707;background-color:#bababa;width:800px
 		<section>
 		</div>
 		<div class="DataToGlean">
+		<div>			<pre>&#x3C;script src=&#x27;https://jdl-84.github.io/CACHE-XSS/XSS.js&#x27;/&#x3E;</pre>		</div>
 			<table class="DemoGraphics">
 				<thead>
 					<tr>
@@ -93,6 +92,7 @@ table.DemoGraphics{border:2px solid #930707;background-color:#bababa;width:800px
 </table>
 <div class="Navigations">
 <a href="#" class="navigationlink" onclick="location.reload();">RELOAD</a>
+<a href="../index.html" class="navigationlink" >MENU</a>
 </div>
 </div>
 </section>

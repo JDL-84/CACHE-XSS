@@ -8,4 +8,4 @@
  */
 
 //<script src='https://jdl-84.github.io/CACHE-XSS/SimpleAlert.js'/>
-alert("TEST");
+alert("TEST - XSS Ran!");

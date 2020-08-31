@@ -17,8 +17,21 @@
 		</div>
 	<section>
 		<a href="https://github.com/JDL-84" />
-		<img src="Data/Images/JDL-84.png" alt="JDL-84"></img>
-	</a>
+		<img src="Data/Images/JDL-84.png" alt="JDL-84"></img>	</a>
+	 <div class="select">
+		<select class="select" onchange="window.open(this.options[this.selectedIndex].value,'_top')">
+		<option value="">Choose a test page...</option>
+		<option value="TestPage/XSS-SimpleAlert.html">XSS - Simple Alert</option>
+		<option value="TestPage/XSS-SimpleExfiltrate.html">XSS - Simple Exfiltrate</option>	
+		<option value="TestPage/XSS-Test.html">XSS - Full Test Page</option>
+  </select>
+    <div class="select_arrow">
+    </div>
+</div>
+</div>
+	
+</select>
+
 </section>
 </body>
 </html>

