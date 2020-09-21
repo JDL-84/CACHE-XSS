@@ -37,9 +37,9 @@
 
     	position: fixed;
 
-    	bottom: 10;
+    	bottom: 10px;
 
-    	left: 10;
+    	left: 10px;
 
     }
 
@@ -54,15 +54,14 @@
     	word-spacing: 2px;
 
     	color: #FFFFFF;
-
+		float:none;
+overflow: hidden;
     }
 
     .RowName {
 
     	min-width: 125px;
-
     	float: left;
-
     	font-weight: 800;
 
     }
@@ -74,6 +73,7 @@
     	width: 425px;
 
     	float: left;
+		
 
     }
 

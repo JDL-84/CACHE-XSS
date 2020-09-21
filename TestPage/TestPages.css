@@ -9,8 +9,10 @@ table.DemoGraphics {
 	font-size: 15px;
 }
 table.DemoGraphics input {
-	width: 100%;
+	width: 90%;
 	border: solid 1px #930707;
+	margin-bottom:3px;
+ 
 }
 table.DemoGraphics td,
 table.DemoGraphics th {
@@ -22,12 +24,13 @@ table.DemoGraphics tbody td {
 }
 table.DemoGraphics tr:nth-child(even) {
 	background: #fff;
+	color:#930707;
 }
 table.DemoGraphics thead {
 	background: #930707;
 }
 table.DemoGraphics thead th {
-	font-size: 19px;
+
 	font-weight: 700;
 	color: #fff;
 	text-align: center;
@@ -103,8 +106,8 @@ table.DemoGraphics tfoot .links a {
 .JDL {
 	position: absolute;
 	position: fixed;
-	top: 10;
-	left: 10;
+	top: 10px;
+	left: 10px;
 }
 .ICO {
 	width: 100px;
@@ -117,7 +120,7 @@ table.DemoGraphics tfoot .links a {
 }
 .Title {
 	float: left;
-	padding: 25 25 25 25;
+	padding: 25px 25px 25px 25px;
 	color: #fff;
 }
 .Title h1 {
